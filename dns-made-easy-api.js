@@ -8,7 +8,7 @@ const constants = require('./constants');
 
 // Get UTC TIME
 const utcMoment = moment.utc();
-let requestDate = new Date(utcMoment.format()).toUTCString();
+const requestDate = new Date(utcMoment.format()).toUTCString();
 
 // GET HMAC
 jsSHA = new jssha("SHA-1", "TEXT");
