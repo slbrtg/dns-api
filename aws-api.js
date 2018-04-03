@@ -13,11 +13,11 @@ function getHostedZoneCount() {
 }
 
 function getHostedZoneId(zoneName) {
-  return new Promise(async (resolve, reject) => {
+  return new Promise(async (resolve) => {
     const params = { DNSName: zoneName };
     await route53.listHostedZonesByName(params, (err, data) => {
       if(err) {
-        reject(err, err.stack)
+        console.log(err, err.stack)
       } else {
         resolve(data.HostedZones[0].Id);
       }
